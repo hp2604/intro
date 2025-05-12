@@ -135,7 +135,7 @@ export function WorkExperience() {
         <SectionTitle>
           <Briefcase className="inline-block mb-2 mr-2 h-8 w-8 text-accent" /> Work Experience
         </SectionTitle>
-        <div className="max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {currentWorkExperience.map((item) => (
             <WorkExperienceItem
               key={item.id}
