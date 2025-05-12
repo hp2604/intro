@@ -137,7 +137,7 @@ export function Certificates() {
         <SectionTitle>
           <Award className="inline-block mb-2 mr-2 h-8 w-8 text-accent" /> Certificates & Awards
         </SectionTitle>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentCertificates.map((item) => (
             <motion.div
               key={`certificate-${item.id}`}

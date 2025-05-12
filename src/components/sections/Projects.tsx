@@ -144,7 +144,7 @@ export function Projects() {
             loop: currentProjects.length > 1, // Loop only if more than one project
           }}
           className="w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto"
-        >
+        > 
           <CarouselContent className="-ml-4"> {/* Negative margin to offset item padding */}
             {currentProjects.map((project) => (
               <CarouselItem key={project.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
