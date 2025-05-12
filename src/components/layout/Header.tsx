@@ -50,11 +50,8 @@ export const Header: FC = () => {
             </Button>
           ))}
         </nav>
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation and Theme Toggle */}
         <div className="md:hidden flex items-center">
-          <Button variant="ghost" size="icon" aria-label="Toggle Menu" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
           {/* Mobile Menu Container */}
           <div className={cn(
             "absolute top-16 left-0 right-0 bg-background/95 shadow-lg backdrop-blur-md py-4 transition-all duration-300 ease-in-out",
@@ -68,11 +65,12 @@ export const Header: FC = () => {
               ))}
               </nav>
           </div>
-        </div>
-
-        {/* Theme Toggle Button */}
-        <div className="flex items-center ml-auto">
+          {/* Hamburger Menu Button */}
+          <Button variant="ghost" size="icon" aria-label="Toggle Menu" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
            <ThemeToggleButton />
+
         </div>
 
         {/* Placeholder for desktop to balance the centered nav if ThemeToggle was not on the right.
