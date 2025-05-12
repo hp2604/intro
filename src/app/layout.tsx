@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'FolioForge - Your Professional Portfolio',
-  description: 'Create and showcase your professional portfolio with FolioForge, powered by NextJS and AI.',
+  title: 'Harsh Prajapati Portfolio',
+  description: 'Harsh Prajapati\'s professional portfolio showcasing projects, skills, and experience.',
 };
 
 const FOUC_PREVENTION_SCRIPT = `
