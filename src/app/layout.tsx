@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Harsh Prajapati Portfolio',
+  title: 'Harsh Prajapati Portfolio Website',
   description: 'Harsh Prajapati\'s professional portfolio showcasing projects, skills, and experience.',
 };
 
