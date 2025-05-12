@@ -132,7 +132,7 @@ const personalInfo = {
     email: 'harshprajapati0139@gmail.com',
     phone: '+91 8959551239 ',
     location: 'Ujjain',
-    resumeUrl: '/harsh_prajapati_resume.pdf'
+    resumeUrl: 'https://drive.google.com/file/d/1LPDq7s6UyXmoXd2xQEFjh-vJ7vxqkXqC/view?usp=sharing'
 };
 const workExperience = [
     {
