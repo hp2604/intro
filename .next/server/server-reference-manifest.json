@@ -1,0 +1,17 @@
+{
+  "node": {
+    "40650bd27ba422a9e7e6c9fee67ca157a7a4dfa604": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/adjust-description-style.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "OCsa2I6c/HJtBu9uPq/2AGbRme1Y9XTRF/KYKTEixIk="
+}

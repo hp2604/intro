@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Light Sky Blue */
+    --foreground: 210 40% 10%; /* Dark Blue */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 40% 10%; /* Dark Blue */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 40% 10%; /* Dark Blue */
+
+    --primary: 205 75% 45%; /* Vivid Cerulean Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 180 50% 90%; /* Pale Cyan */
+    --secondary-foreground: 180 50% 20%; /* Dark Cyan for text on secondary */
+
+    --muted: 210 30% 96%; /* Very Light Blue-Gray */
+    --muted-foreground: 210 25% 45%; /* Medium Blue-Gray for muted text */
+
+    --accent: 30 100% 50%; /* Bright Orange */
+    --accent-foreground: 0 0% 100%; /* White for text on accent */
+
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 0 0% 98%; /* Light Gray for text on destructive */
+
+    --border: 210 30% 85%; /* Light Blue-Gray Border */
+    --input: 210 30% 92%; /* Slightly darker input background */
+    --ring: 30 100% 50%; /* Accent Orange for rings */
+
+    --radius: 0.5rem;
+
+    --chart-1: 205 70% 50%; /* Cerulean */
+    --chart-2: 170 60% 45%; /* Teal */
+    --chart-3: 250 65% 60%; /* Indigo */
+    --chart-4: 30 90% 55%;  /* Orange */
+    --chart-5: 320 70% 60%; /* Pink */
+
+    --sidebar-background: 210 35% 95%; /* Very Light Blue */
+    --sidebar-foreground: 210 40% 15%; /* Dark Blue */
+    --sidebar-primary: 205 75% 40%; /* Darker Cerulean */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 205 70% 88%; /* Light Cerulean for hover/active */
+    --sidebar-accent-foreground: 205 75% 35%; /* Darker Cerulean for text on sidebar accent */
+    --sidebar-border: 210 30% 80%; /* Medium-Light Blue-Gray Border */
+    --sidebar-ring: 30 100% 50%; /* Accent Orange for ring */
+  }
+
+  .dark {
+    --background: 220 30% 12%; /* Very Dark Desaturated Blue */
+    --foreground: 210 30% 88%; /* Light Grayish Blue */
+
+    --card: 220 30% 18%; /* Darker Desaturated Blue than background */
+    --card-foreground: 210 30% 88%; /* Light Grayish Blue */
+
+    --popover: 220 30% 18%; /* Darker Desaturated Blue than background */
+    --popover-foreground: 210 30% 88%; /* Light Grayish Blue */
+
+    --primary: 205 70% 60%; /* Lighter Cerulean Blue */
+    --primary-foreground: 220 30% 5%; /* Very Dark Blue for text on primary */
+
+    --secondary: 220 25% 22%; /* Dark Desaturated Blue for subtle dark backgrounds */
+    --secondary-foreground: 210 40% 75%; /* Lighter Grayish Blue for text on secondary */
+
+    --muted: 220 20% 28%; /* Darker Gray than secondary */
+    --muted-foreground: 210 30% 65%; /* Medium-light Grayish Blue for muted text */
+
+    --accent: 30 100% 60%; /* Bright Orange (slightly lighter for dark mode) */
+    --accent-foreground: 220 25% 10%; /* Very dark blue for text on accent */
+    
+    --destructive: 0 70% 50%; /* Slightly less intense Red */
+    --destructive-foreground: 0 0% 98%; /* Light Gray for text on destructive */
+
+    --border: 220 20% 30%; /* Dark Grayish Blue Border */
+    --input: 220 20% 25%; /* Darker input background */
+    --ring: 30 100% 60%; /* Accent Orange for rings */
+
+    --chart-1: 205 65% 55%; /* Lighter Cerulean */
+    --chart-2: 170 55% 50%; /* Lighter Teal */
+    --chart-3: 250 60% 65%; /* Lighter Indigo */
+    --chart-4: 30 85% 60%;  /* Lighter Orange */
+    --chart-5: 320 65% 65%; /* Lighter Pink */
+
+    --sidebar-background: 220 30% 8%; /* Even Darker Desaturated Blue for sidebar */
+    --sidebar-foreground: 210 30% 80%; /* Light Grayish Blue */
+    --sidebar-primary: 205 70% 55%; /* Lighter Cerulean */
+    --sidebar-primary-foreground: 220 30% 5%; /* Very Dark Blue */
+    --sidebar-accent: 220 25% 20%; /* Dark Desaturated Blue for hover/active */
+    --sidebar-accent-foreground: 205 70% 70%; /* Lighter Cerulean for text on sidebar accent */
+    --sidebar-border: 220 20% 25%; /* Dark Grayish Blue Border */
+    --sidebar-ring: 30 100% 60%; /* Accent Orange for ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+  section {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .scroll-animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .scroll-animate-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: none;
+    }
+  }
+
+  .typewriter-title {
+    display: inline-block;
+    overflow: hidden; 
+    white-space: nowrap;
+    border-right: .1em solid hsl(var(--accent)); 
+    animation:
+      typing-title 2s steps(14, end) 0.5s forwards, /* "Java Developer" is 14 chars, 0.5s delay */
+      blink-caret-title .75s step-end 0.5s 3 forwards; /* 0.5s delay, 3 blinks */
+    width: 0;
+  }
+
+  @keyframes typing-title {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret-title {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--accent)); }
+  }
+}
