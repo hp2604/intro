@@ -26,6 +26,7 @@ export const Header: FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
   return (
     <header
       className={cn(
@@ -37,33 +38,37 @@ export const Header: FC = () => {
     >
       <Container className="flex h-16 items-center justify-between">
         {/* Desktop Navigation - Centered */}
-        <nav className="md:flex hidden items-center space-x-1 flex-1 justify-center">
+        <nav className="hidden md:flex items-center space-x-1 flex-1 justify-center">
           {navItems.map((item) => (
-            <Button 
-              key={item.label} 
-              variant="ghost" 
-              asChild 
+            <Button
+              key={item.label}
+              variant="ghost"
+              asChild
               className="text-foreground/80 hover:text-primary hover:bg-accent/10 px-3 py-2"
             >
               <Link href={item.href}>{item.label}</Link>
             </Button>
           ))}
         </nav>
-
         {/* Mobile Navigation */}
-        <nav className="flex md:hidden flex-1 items-center justify-center">
-             {navItems.map((item) => (
-                <Button
-                  key={item.label}
-                  variant="ghost"
-                  asChild
-                  className="text-foreground/80 hover:text-primary hover:bg-accent/10 px-2 py-1 text-sm" // Adjusted padding and font size
-                >
-                  <Link href={item.href}>{item.label}</Link>
+        <div className="md:hidden flex items-center">
+          <Button variant="ghost" size="icon" aria-label="Toggle Menu" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+          {/* Mobile Menu Container */}
+          <div className={cn(
+            "absolute top-16 left-0 right-0 bg-background/95 shadow-lg backdrop-blur-md py-4 transition-all duration-300 ease-in-out",
+            isMobileMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-full opacity-0 invisible"
+          )}>
+            <nav className="flex flex-col items-center space-y-4">
+              {navItems.map((item) => (
+                <Button key={item.label} variant="ghost" asChild className="text-foreground hover:text-primary hover:bg-accent/10 px-3 py-2 text-lg">
+                  <Link href={item.href} onClick={() => setIsMobileMenuOpen(false)}>{item.label}</Link>
                 </Button>
               ))}
               </nav>
-
+          </div>
+        </div>
 
         {/* Theme Toggle Button */}
         <div className="flex items-center ml-auto">
