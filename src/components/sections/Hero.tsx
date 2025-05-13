@@ -16,7 +16,7 @@ export function Hero() {
     <section 
       id="hero" 
  ref={animation.ref}
- className={cn('bg-secondary py-20 md:py-32', animation.className)}
+ className={cn('bg-secondary py-20 md:py-32 w-full', animation.className)}
     >
  <Container className="text-center w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary mb-6">
